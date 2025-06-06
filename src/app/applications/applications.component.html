@@ -1,0 +1,72 @@
+<form [formGroup]="applicationsForm" (ngSubmit)="onSubmit()">
+  <mat-card style="margin-top: 20px;">
+    <div class="card-title">
+      <mat-card-title style="margin-top: 20px;"
+        ><strong>Advanced Programs and Solutions</strong></mat-card-title
+      >
+    </div>
+    <br />
+    <mat-card-content>
+      <mat-accordion class="embedded-dark-theme">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title> Rail TempEst Application </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="form-row">
+            <mat-slide-toggle #slide formControlName="railTempEst">
+              <span>{{ slide.checked ? 'Enabled' : 'Disabled' }}</span>
+            </mat-slide-toggle>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Status</mat-label>
+              <input matInput formControlName="railTempEstStatus" />
+            </mat-form-field>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion class="embedded-dark-theme">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title> Crossing X-Pert Application </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="form-row">
+            <mat-slide-toggle #cxpslide formControlName="crossingXpert">
+              <span>{{ cxpslide.checked ? 'Enabled' : 'Disabled' }}</span>
+            </mat-slide-toggle>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Status</mat-label>
+              <input matInput formControlName="crossingXpertStatus" />
+            </mat-form-field>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion class="embedded-dark-theme">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title> DC Track Circuit Application </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="form-row">
+            <mat-slide-toggle #dctcslide formControlName="dcTrackCircuit">
+              <span>{{ dctcslide.checked ? 'Enabled' : 'Disabled' }}</span>
+            </mat-slide-toggle>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Status</mat-label>
+              <input matInput formControlName="dcTrackCircuitStatus" />
+            </mat-form-field>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card-actions style="margin-top: 20px;">
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </mat-card-actions>
+</form>

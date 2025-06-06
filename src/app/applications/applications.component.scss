@@ -1,0 +1,24 @@
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.form-row mat-form-field {
+  flex: 1 1 45%;
+  min-width: 250px;
+}
+
+.card-title mat-card-title {
+  color: #00457e;
+  flex: 1 1 45%;
+  min-width: 250px;
+}
+
+.slide-toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+  margin-top: 20px;
+}

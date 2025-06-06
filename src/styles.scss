@@ -1,0 +1,25 @@
+@use '@angular/material' as mat;
+
+body {
+  font-family: Roboto, 'Noto Sans', SemiCondensed;
+  margin: 0;
+  padding: 30px;
+  height: 100%;
+  max-width: 850px;
+
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Noto Sans,
+    density: 0,
+  ));
+}
+
+html {
+  height: 100%;
+  max-width: 850px;
+}
+

@@ -1,0 +1,66 @@
+<form [formGroup]="locationForm" (ngSubmit)="onSubmit()">
+  <mat-card style="margin-top: 20px;">
+     <div class="card-title">
+        <mat-card-title style="margin-top: 20px;">
+           <strong>Location Information</strong>
+        </mat-card-title>
+     </div>
+     <br />
+     <mat-card-content>
+        <div class="form-row">
+           <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input
+                 matInput
+                 formControlName="name"
+                 placeholder="Name of Location"
+                 />
+              <mat-error *ngIf="locationForm.get('name')?.hasError('required')"
+                 >Name is required</mat-error
+                 >
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+              <mat-label>Subdivision</mat-label>
+              <input
+                 matInput
+                 formControlName="subdivision"
+                 placeholder="Location Subdivision"
+                 />
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+              <mat-label>Latitude</mat-label>
+              <input
+                 matInput
+                 formControlName="latitude"
+                 placeholder="North-South GPS Coordinates"
+                 />
+              <mat-error *ngIf="locationForm.get('latitude')?.hasError('required')"
+                 >Latitude is required</mat-error
+                 >
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+              <mat-label>Longitude</mat-label>
+              <input
+                 matInput
+                 formControlName="longitude"
+                 placeholder="East-West GPS Coordinates"
+                 />
+              <mat-error *ngIf="locationForm.get('longitude')?.hasError('required')"
+                 >Longitude is required</mat-error
+                 >
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+              <mat-label>Marker</mat-label>
+              <input
+                 matInput
+                 formControlName="marker"
+                 placeholder="Trackline Milepost or Kilometre"
+                 />
+           </mat-form-field>
+        </div>
+     </mat-card-content>
+  </mat-card>
+  <mat-card-actions style="margin-top: 20px;">
+     <button mat-stroked-button color="primary" type="submit">Submit</button>
+  </mat-card-actions>
+  </form>

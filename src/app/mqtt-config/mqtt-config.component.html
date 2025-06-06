@@ -1,0 +1,92 @@
+<form [formGroup]="mqttForm" (ngSubmit)="onSubmit()">
+  <mat-card style="margin-top: 20px;">
+    <div class="card-title">
+      <mat-card-title style="margin-top: 20px;"><strong>SignalView MQTT Broker Configuration</strong></mat-card-title>
+    </div>    
+    <br/>
+    <mat-card-content>
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>Broker Host</mat-label>
+          <input
+            matInput
+            formControlName="host"
+            placeholder="Enter Broker Host"
+          />
+          <mat-error *ngIf="mqttForm.get('host')?.hasError('required')"
+            >Host is required</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Port</mat-label>
+          <input
+            matInput
+            type="number"
+            formControlName="port"
+            placeholder="Enter Port Number"
+          />
+          <mat-error *ngIf="mqttForm.get('port')?.hasError('required')"
+            >Port is required</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Client ID</mat-label>
+          <input
+            matInput
+            formControlName="clientId"
+            placeholder="Enter Client ID"
+          />
+          <mat-error *ngIf="mqttForm.get('clientId')?.hasError('required')"
+            >Client ID is required</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Protocol</mat-label>
+          <mat-select formControlName="protocol">
+            <mat-option value="mqtt">MQTT</mat-option>
+            <mat-option value="mqtts">MQTTS</mat-option>
+          </mat-select>
+          <mat-error *ngIf="mqttForm.get('protocol')?.hasError('required')"
+            >Protocol is required</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            formControlName="username"
+            placeholder="Enter Username"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            type="password"
+            formControlName="password"
+            placeholder="Enter Password"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Status</mat-label>
+          <input
+            matInput
+            type="status"
+            formControlName="status"
+            placeholder="Enter Password"
+          />
+        </mat-form-field>        
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card-actions style="margin-top: 20px;">
+    <button mat-stroked-button color="primary" type="submit">Submit</button>
+  </mat-card-actions>
+</form>
