@@ -53,7 +53,7 @@ export class DeviceConfigComponent {
       status: ['Normal'],
     });
 
-    this.deviceElixsForm = this.fb.group({
+    this.deviceElxisForm = this.fb.group({
       equipmentName: ['ELIXS'],
       softwareVersion: ['A5'],
       softwareBuild: ['B6'],
@@ -82,7 +82,7 @@ export class DeviceConfigComponent {
     console.log('WSDMM Device Configuration:', this.deviceWsdmmForm.value);
   }
   onSubmitElxis() {
-    console.log('ELIXS Device Configuration:', this.deviceElixsForm.value);
+    console.log('ELIXS Device Configuration:', this.deviceElxisForm.value);
   }
   onSubmitDau() {
     console.log('DAU Device Configuration:', this.deviceDauForm.value);
