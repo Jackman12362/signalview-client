@@ -23,3 +23,22 @@ html {
   max-width: 850px;
 }
 
+// ************************************************************************************************************************
+// *** OVERRIDING THE STYLES OF OUR MAT-FORM-FIELDS TO MAKE IT LOOKS LIKE LEGACY INPUTS THAT WE HAD IN ANGULAR MATERIAL 14
+// ************************************************************************************************************************
+
+.mdc-text-field--filled, .mat-mdc-text-field-wrapper:hover, .mat-mdc-form-field-focus-overlay {
+  background-color: transparent !important;
+}
+
+.mdc-text-field {
+  padding: 0 !important;
+}
+
+.mdc-text-field {
+  height: 50px !important;
+}
+
+.mat-mdc-form-field-hint-wrapper, .mat-mdc-form-field-error-wrapper {
+  padding: 0 !important;
+}

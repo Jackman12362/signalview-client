@@ -7,7 +7,7 @@
         <form [formGroup]="deviceWsdmmForm" (ngSubmit)="onSubmitWsdmm()">
           <mat-accordion class="embedded-dark-theme">
 
-          <mat-expansion-panel  [ngStyle]="{'background-color': wsdmmslide.checked == false ? '#E4F3FF' : '#ffffff'}" >
+          <mat-expansion-panel  [ngStyle]="{'background-color': wsdmmslide.checked == false ? '#F3F3FA' : '#ffffff'}" >
             <mat-expansion-panel-header>
               <mat-panel-title> WSDMM </mat-panel-title>
             </mat-expansion-panel-header>
@@ -18,47 +18,52 @@
                   <mat-icon>{{ wsdmmslide.checked==false ? 'lock' : 'lock_open' }}</mat-icon>
               </mat-slide-toggle>
 
-              <mat-form-field appearance="outline" >
+              <mat-form-field appearance="fill">
                 <mat-label>Equipment Name</mat-label>
                 <input matInput formControlName="equipmentName" />
-              </mat-form-field>
+              </mat-form-field>           
 
-              <mat-form-field appearance="outline" >
+              <mat-form-field appearance="fill" >
                 <mat-label>Software Version</mat-label>
                 <input matInput formControlName="softwareVersion" />
               </mat-form-field>
               
-              <mat-form-field appearance="outline" >
+              <mat-form-field appearance="fill" >
                 <mat-label>Software Build</mat-label>
                 <input matInput formControlName="softwareBuild" />
               </mat-form-field>
               
-              <mat-form-field appearance="outline" >
+              <mat-form-field appearance="fill" >
                 <mat-label>Software CheckSum</mat-label>
                 <input matInput formControlName="softwareChecksum" />
               </mat-form-field>
               
-              <mat-form-field appearance="outline" >
+              <mat-form-field appearance="fill" >
                 <mat-label>Hardware Version</mat-label>
                 <input matInput formControlName="hardwareVersion" />
               </mat-form-field>
               
-              <mat-form-field appearance="outline" >
+              <mat-form-field appearance="fill" >
+                <mat-label>Part Number</mat-label>
+                <input matInput formControlName="partNumber" />
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" >
                 <mat-label>Serial Number</mat-label>
                 <input matInput formControlName="serialNumber" />
               </mat-form-field>
               
-              <mat-form-field appearance="outline" >
+              <mat-form-field appearance="fill" >
                 <mat-label>IP Address</mat-label>
                 <input matInput formControlName="ipAddress" />
               </mat-form-field>
               
-              <mat-form-field appearance="outline" >
+              <mat-form-field appearance="fill" >
                 <mat-label>URL</mat-label>
                 <input matInput formControlName="url" />
               </mat-form-field>             
               
-              <mat-form-field appearance="outline" >
+              <mat-form-field appearance="fill" >
                 <mat-label>Status</mat-label>
                 <input matInput formControlName="status" />
               </mat-form-field>                   
@@ -72,7 +77,7 @@
       <form [formGroup]="deviceElxisForm" (ngSubmit)="onSubmitElxis()">
 
         <mat-accordion class="embedded-dark-theme">
-          <mat-expansion-panel  [ngStyle]="{'background-color': elxisslide.checked == false ? '#E4F3FF' : '#ffffff'}" >
+          <mat-expansion-panel  [ngStyle]="{'background-color': elxisslide.checked == false ? '#F3F3FA' : '#ffffff'}" >
             <mat-expansion-panel-header>
               <mat-panel-title> ElectroLogIXS </mat-panel-title>
             </mat-expansion-panel-header>
@@ -83,47 +88,52 @@
               <mat-icon>{{ elxisslide.checked==false ? 'lock' : 'lock_open' }}</mat-icon>
             </mat-slide-toggle>
 
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>Equipment Name</mat-label>
               <input matInput formControlName="equipmentName" />
             </mat-form-field>
 
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>Software Version</mat-label>
               <input matInput formControlName="softwareVersion" />
             </mat-form-field>
             
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>Software Build</mat-label>
               <input matInput formControlName="softwareBuild" />
             </mat-form-field>
             
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>Software CheckSum</mat-label>
               <input matInput formControlName="softwareChecksum" />
             </mat-form-field>
             
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>Hardware Version</mat-label>
               <input matInput formControlName="hardwareVersion" />
             </mat-form-field>
-            
-            <mat-form-field appearance="outline" >
+              
+            <mat-form-field appearance="fill" >
+              <mat-label>Part Number</mat-label>
+              <input matInput formControlName="partNumber" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" >
               <mat-label>Serial Number</mat-label>
               <input matInput formControlName="serialNumber" />
             </mat-form-field>
             
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>IP Address</mat-label>
               <input matInput formControlName="ipAddress" />
             </mat-form-field>
             
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>URL</mat-label>
               <input matInput formControlName="url" />
             </mat-form-field>             
             
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>Status</mat-label>
               <input matInput formControlName="status" />
             </mat-form-field>                   
@@ -138,7 +148,7 @@
         <form [formGroup]="deviceDauForm" (ngSubmit)="onSubmitDau()">
 
         <mat-accordion class="embedded-dark-theme">
-          <mat-expansion-panel  [ngStyle]="{'background-color': dauslide.checked == false ? '#E4F3FF' : '#ffffff'}" >
+          <mat-expansion-panel  [ngStyle]="{'background-color': dauslide.checked == false ? '#F3F3FA' : '#ffffff'}" >
             <mat-expansion-panel-header>
               <mat-panel-title> DAU </mat-panel-title>
             </mat-expansion-panel-header>
@@ -149,47 +159,52 @@
               <mat-icon>{{ dauslide.checked==false ? 'lock' : 'lock_open' }}</mat-icon>
             </mat-slide-toggle>
 
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>Equipment Name</mat-label>
               <input matInput formControlName="equipmentName" />
             </mat-form-field>
 
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>Software Version</mat-label>
               <input matInput formControlName="softwareVersion" />
             </mat-form-field>
             
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>Software Build</mat-label>
               <input matInput formControlName="softwareBuild" />
             </mat-form-field>
             
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>Software CheckSum</mat-label>
               <input matInput formControlName="softwareChecksum" />
             </mat-form-field>
             
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>Hardware Version</mat-label>
               <input matInput formControlName="hardwareVersion" />
             </mat-form-field>
-            
-            <mat-form-field appearance="outline" >
+              
+            <mat-form-field appearance="fill" >
+              <mat-label>Part Number</mat-label>
+              <input matInput formControlName="partNumber" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" >
               <mat-label>Serial Number</mat-label>
               <input matInput formControlName="serialNumber" />
             </mat-form-field>
             
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>IP Address</mat-label>
               <input matInput formControlName="ipAddress" />
             </mat-form-field>
             
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>URL</mat-label>
               <input matInput formControlName="url" />
             </mat-form-field>             
             
-            <mat-form-field appearance="outline" >
+            <mat-form-field appearance="fill" >
               <mat-label>Status</mat-label>
               <input matInput formControlName="status" />
             </mat-form-field>                   
