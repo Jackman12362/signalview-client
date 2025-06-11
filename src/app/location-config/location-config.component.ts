@@ -6,6 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatIconModule } from '@angular/material/icon';
 
 import { CommonModule } from '@angular/common';
 
@@ -23,6 +24,7 @@ import { CommonModule } from '@angular/common';
     MatFormFieldModule,
     MatSlideToggleModule,
     CommonModule,
+    MatIconModule,
   ],
 })
 export class LocationConfigComponent {
