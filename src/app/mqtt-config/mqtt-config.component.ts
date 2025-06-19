@@ -34,7 +34,7 @@ export class MqttConfigComponent {
     this.mqttForm = this.fb.group({
       host: ['192.168.0.100'],
       port: ['1883'],
-      clientId: ['wsdmm-mp129'],
+      clientId: ['mp129'],
       username: ['admin'],
       password: ['admin123'],
       protocol: ['mqtt'],

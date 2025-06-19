@@ -43,6 +43,7 @@ export class DeviceConfigComponent {
 
     this.deviceWsdmmForm = this.fb.group({
       equipmentName: ['WSDMM'],
+      clientId: ['wsdmm_mp129'],
       softwareVersion: ['A5'],
       softwareBuild: ['B6'],
       softwareChecksum: ['123456789ABCDEF'],
@@ -56,6 +57,7 @@ export class DeviceConfigComponent {
 
     this.deviceElxisForm = this.fb.group({
       equipmentName: ['ELIXS'],
+      clientId: ['elxis_mp129'],
       softwareVersion: ['A5'],
       softwareBuild: ['B6'],
       softwareChecksum: ['123456789ABCDEF'],
@@ -69,6 +71,7 @@ export class DeviceConfigComponent {
 
     this.deviceDauForm = this.fb.group({
       equipmentName: ['DAU'],
+      clientId: ['dau_mp129'],
       softwareVersion: ['A5'],
       softwareBuild: ['B6'],
       softwareChecksum: ['123456789ABCDEF'],

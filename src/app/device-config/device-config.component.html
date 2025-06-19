@@ -13,15 +13,24 @@
             </mat-expansion-panel-header>
   
             <div class="form-row">
-
-              <mat-slide-toggle #wsdmmslide hide type="submit">
-                  <mat-icon>{{ wsdmmslide.checked==false ? 'lock' : 'lock_open' }}</mat-icon>
-              </mat-slide-toggle>
+              <div>
+                <mat-slide-toggle #wsdmmslide hide type="submit">
+                    <mat-icon>{{ wsdmmslide.checked==false ? 'lock' : 'lock_open' }}</mat-icon>
+                </mat-slide-toggle>
+                <mat-slide-toggle #wsdmmenable formControlName="deviceWsdmmForm">
+                    <span>{{ wsdmmenable.checked ? 'Enabled' : 'Disabled' }}</span>
+                </mat-slide-toggle>
+              </div>
 
               <mat-form-field appearance="fill">
                 <mat-label>Equipment Name</mat-label>
                 <input matInput formControlName="equipmentName" />
               </mat-form-field>           
+
+              <mat-form-field appearance="fill" >
+                <mat-label>Client Id</mat-label>
+                <input matInput formControlName="clientId" />
+              </mat-form-field>              
 
               <mat-form-field appearance="fill" >
                 <mat-label>Software Version</mat-label>
@@ -84,13 +93,23 @@
 
             <div class="form-row">
 
-            <mat-slide-toggle #elxisslide hide type="submit">
-              <mat-icon>{{ elxisslide.checked==false ? 'lock' : 'lock_open' }}</mat-icon>
-            </mat-slide-toggle>
+            <div>
+              <mat-slide-toggle #elxisslide hide type="submit">
+                <mat-icon>{{ elxisslide.checked==false ? 'lock' : 'lock_open' }}</mat-icon>
+              </mat-slide-toggle>
+              <mat-slide-toggle #elxisenable formControlName="deviceElxisForm">
+                <span>{{ elxisenable.checked ? 'Enabled' : 'Disabled' }}</span>
+              </mat-slide-toggle>
+            </div>
 
             <mat-form-field appearance="fill" >
               <mat-label>Equipment Name</mat-label>
               <input matInput formControlName="equipmentName" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" >
+              <mat-label>Client Id</mat-label>
+              <input matInput formControlName="clientId" />
             </mat-form-field>
 
             <mat-form-field appearance="fill" >
@@ -155,13 +174,23 @@
   
             <div class="form-row">
               
-            <mat-slide-toggle #dauslide hide type="submit">
-              <mat-icon>{{ dauslide.checked==false ? 'lock' : 'lock_open' }}</mat-icon>
-            </mat-slide-toggle>
+            <div>
+              <mat-slide-toggle #dauslide hide type="submit">
+                <mat-icon>{{ dauslide.checked==false ? 'lock' : 'lock_open' }}</mat-icon>
+              </mat-slide-toggle>
+              <mat-slide-toggle #dauenable formControlName="deviceDauForm">
+                <span>{{ dauenable.checked ? 'Enabled' : 'Disabled' }}</span>
+              </mat-slide-toggle>
+            </div>
 
             <mat-form-field appearance="fill" >
               <mat-label>Equipment Name</mat-label>
               <input matInput formControlName="equipmentName" />
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill" >
+              <mat-label>Client Id</mat-label>
+              <input matInput formControlName="clientId" />
             </mat-form-field>
 
             <mat-form-field appearance="fill" >

@@ -1,4 +1,3 @@
-<form [formGroup]="applicationsForm" (ngSubmit)="onSubmit()">
   <mat-card style="margin-top: 20px;">
     <div class="card-title">
       <mat-card-title style="margin-top: 20px;"
@@ -7,25 +6,38 @@
     </div>
     <br />
     <mat-card-content>
+      <form [formGroup]="applicationsTempEstForm" (ngSubmit)="onSubmitTempEst()">
       <mat-accordion class="embedded-dark-theme">
-        <mat-expansion-panel>
+        <mat-expansion-panel  [ngStyle]="{'background-color': isLocked == true ? '#F3F3FA' : '#ffffff'}" >
           <mat-expansion-panel-header>
             <mat-panel-title> Rail TempEst Application </mat-panel-title>
           </mat-expansion-panel-header>
 
           <div class="form-row">
-            <mat-slide-toggle #slide formControlName="railTempEst">
-              <span>{{ slide.checked ? 'Enabled' : 'Disabled' }}</span>
-            </mat-slide-toggle>
+            <div>
+              <button mat-icon-button (click)="toggleLock()" [attr.aria-label]="isLocked ? 'Lock' : 'Unlock'" formControlName="applicationsTempEstForm">
+                <mat-icon>{{ isLocked ? 'lock' : 'lock_open' }}</mat-icon>
+              </button>
+              <button mat-icon-button (click)="toggleEnable()" [attr.aria-label]="isEnabled ? 'Enabled' : 'Lock'">
+                <mat-icon>{{ isEnabled ? 'cancel' : 'check_circle' }}</mat-icon>
+              </button>             
+            </div>
+
+            <mat-form-field appearance="fill" >
+              <mat-label>Client Id</mat-label>
+              <input matInput formControlName="clientId" />
+            </mat-form-field>   
 
             <mat-form-field appearance="fill">
               <mat-label>Status</mat-label>
-              <input matInput formControlName="railTempEstStatus" />
+              <input matInput formControlName="status" />
             </mat-form-field>
           </div>
         </mat-expansion-panel>
       </mat-accordion>
+    </form>
 
+    <form [formGroup]="applicationsCxpForm" (ngSubmit)="onSubmitCxp()">
       <mat-accordion class="embedded-dark-theme">
         <mat-expansion-panel>
           <mat-expansion-panel-header>
@@ -33,36 +45,59 @@
           </mat-expansion-panel-header>
 
           <div class="form-row">
-            <mat-slide-toggle #cxpslide formControlName="crossingXpert">
-              <span>{{ cxpslide.checked ? 'Enabled' : 'Disabled' }}</span>
-            </mat-slide-toggle>
+            <div>
+              <mat-slide-toggle #cxpslide hide type="submit">
+                  <mat-icon>{{ cxpslide.checked==false ? 'lock' : 'lock_open' }}</mat-icon>
+              </mat-slide-toggle>
+              <mat-slide-toggle #cxpenable formControlName="enabled">
+                  <span>{{ cxpenable.checked ? 'Enabled' : 'Disabled' }}</span>
+              </mat-slide-toggle>
+            </div>
+
+            <mat-form-field appearance="fill" >
+              <mat-label>Client Id</mat-label>
+              <input matInput formControlName="clientId" />
+            </mat-form-field>  
 
             <mat-form-field appearance="fill">
               <mat-label>Status</mat-label>
-              <input matInput formControlName="crossingXpertStatus" />
+              <input matInput formControlName="status" />
             </mat-form-field>
           </div>
         </mat-expansion-panel>
       </mat-accordion>
+    </form>
 
-      <mat-accordion class="embedded-dark-theme">
+      <form [formGroup]="applicationsDctcForm" (ngSubmit)="onSubmitDctc()">
+        <mat-accordion class="embedded-dark-theme">
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title> DC Track Circuit Application </mat-panel-title>
           </mat-expansion-panel-header>
 
           <div class="form-row">
-            <mat-slide-toggle #dctcslide formControlName="dcTrackCircuit">
-              <span>{{ dctcslide.checked ? 'Enabled' : 'Disabled' }}</span>
-            </mat-slide-toggle>
+            <div>
+              <mat-slide-toggle #dctcslide hide type="submit">
+                  <mat-icon>{{ dctcslide.checked==false ? 'lock' : 'lock_open' }}</mat-icon>
+              </mat-slide-toggle>
+              <mat-slide-toggle #dctcenable formControlName="enabled">
+                  <span>{{ dctcenable.checked ? 'Enabled' : 'Disabled' }}</span>
+              </mat-slide-toggle>
+            </div>
+
+            <mat-form-field appearance="fill" >
+              <mat-label>Client Id</mat-label>
+              <input matInput formControlName="clientId" />
+            </mat-form-field>  
 
             <mat-form-field appearance="fill">
               <mat-label>Status</mat-label>
-              <input matInput formControlName="dcTrackCircuitStatus" />
+              <input matInput formControlName="status" />
             </mat-form-field>
           </div>
         </mat-expansion-panel>
       </mat-accordion>
+    </form>
+
     </mat-card-content>
   </mat-card>
-</form>

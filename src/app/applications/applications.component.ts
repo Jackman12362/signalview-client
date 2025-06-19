@@ -29,20 +29,48 @@ import { CommonModule } from '@angular/common';
   ],
 })
 export class ApplicationsComponent {
-  applicationsForm: FormGroup;
+  applicationsTempEstForm: FormGroup;
+  applicationsCxpForm: FormGroup;
+  applicationsDctcForm: FormGroup;
+
+  isLocked: boolean = true; // Property to track the locked/unlocked state
+  isEnabled: boolean = true; // Property to track the enabled/disabled state
+
+  toggleLock() {
+    this.isLocked = !this.isLocked; // Toggle the state when the button is clicked
+  }
+
+  toggleEnable() {
+    this.isEnabled = !this.isEnabled; // Toggle the state when the button is clicked
+  }
 
   constructor(private fb: FormBuilder) {
-    this.applicationsForm = this.fb.group({
-      railTempEst: [false],
-      railTempEstStatus: ['Healthy'],
-      crossingXpert: [false],
-      crossingXpertStatus: ['Unhealthy'],
-      dcTrackCircuit: [false],
-      dcTrackCircuitStatus: ['Healthy'],
+    this.applicationsTempEstForm = this.fb.group({
+      enabled: [false],
+      status: ['Healthy'],
+      clientId: ['tmpest_mp129'],
+    });
+
+    this.applicationsCxpForm = this.fb.group({
+      enabled: [false],
+      status: ['Unhealthy'],
+      clientId: ['cxp_mp129'],
+    });
+
+    this.applicationsDctcForm = this.fb.group({
+      enabled: [false],
+      status: ['Healthy'],
+      clientId: ['dctc_mp129'],
     });
   }
 
-  onSubmit() {
-    console.log('Appllications Configuration:', this.applicationsForm.value);
+  onSubmitTempEst() {
+    console.log('Appllications Configuration:', this.applicationsTempEstForm.value);
   }
+  onSubmitCxp() {
+    console.log('Appllications Configuration:', this.applicationsCxpForm.value);
+  }
+  onSubmitDctc() {
+    console.log('Appllications Configuration:', this.applicationsDctcForm.value);
+  }    
 }
